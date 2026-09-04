@@ -43,23 +43,73 @@ body {
 /* FOTO / LOGO */
 
 .avatar {
-  width: 96px;
-  height: 96px;
+  width: 110px;
+  height: 110px;
+  margin: 0 auto 18px;
+  padding: 4px;
 
-  margin: 0 auto 16px;
+  border-radius: 50%;
+  overflow: hidden;
 
-  display: grid;
-  place-items: center;
+  background: linear-gradient(
+    45deg,
+    #8b5cf6,
+    #4f46e5,
+    #c084fc,
+    #8b5cf6
+  );
+
+  background-size: 300% 300%;
+
+  animation:
+    borderAnimation 4s ease infinite,
+    pulse 2s ease-in-out infinite;
+
+  box-shadow:
+    0 0 20px rgba(139, 92, 246, 0.45),
+    0 0 45px rgba(99, 72, 220, 0.25);
+}
+
+.avatar video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
 
   border-radius: 50%;
 
-  font-size: 38px;
-  font-weight: 800;
+  border: 3px solid #08080c;
+}
 
-  background: linear-gradient(
-    135deg,
-    #8b5cf6,
-    #4f46e5
+@keyframes borderAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
   );
 
   box-shadow:
