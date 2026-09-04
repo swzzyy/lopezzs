@@ -1,95 +1,124 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Metal+Mania&family=Orbitron:wght@500;600;700&display=swap');
 
+
+/* RESET */
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+
 html {
   scroll-behavior: smooth;
 }
+
 
 body {
   min-height: 100vh;
 
   font-family: 'Inter', Arial, sans-serif;
+
   color: #fff;
 
-  background:
-    radial-gradient(
-      circle at 50% 0%,
-      rgba(125, 70, 255, 0.20),
-      transparent 35%
-    ),
-    linear-gradient(
-      145deg,
-      #050507,
-      #101016 55%,
-      #050507
-    );
+  background: #050507;
 
   overflow-x: hidden;
+
+  position: relative;
 }
 
-/* CAMADA PARA O FUTURO GIF */
 
-body::before {
-  content: "";
+/* =========================
+   VÍDEO DE FUNDO
+========================= */
+
+.background-video {
+
   position: fixed;
 
   inset: 0;
 
-  z-index: -2;
+  width: 100%;
+  height: 100%;
 
-  background: #050507;
+  object-fit: cover;
+
+  z-index: 0;
+
 }
 
-/* ESCURECE O FUNDO PARA DEIXAR O SITE LEGÍVEL */
 
-body::after {
-  content: "";
+/* =========================
+   ESCURECER FUNDO
+========================= */
+
+.background-overlay {
+
   position: fixed;
 
   inset: 0;
-
-  z-index: -1;
 
   background:
     linear-gradient(
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0.65)
+      rgba(0, 0, 0, 0.48),
+      rgba(0, 0, 0, 0.72)
     );
 
+  z-index: 1;
+
   pointer-events: none;
+
 }
 
-/* PÁGINA */
+
+/* =========================
+   PÁGINA
+========================= */
 
 .page {
+
   min-height: 100vh;
 
   display: flex;
+
   justify-content: center;
 
-  padding: 42px 16px 28px;
+  align-items: flex-start;
+
+  padding: 45px 16px 30px;
+
+  position: relative;
+
+  z-index: 2;
+
 }
 
-/* CARTÃO */
+
+/* =========================
+   CARD
+========================= */
 
 .card {
+
   width: min(100%, 560px);
 
   text-align: center;
 
   position: relative;
+
 }
 
-/* FOTO / VÍDEO */
+
+/* =========================
+   FOTO / VÍDEO
+========================= */
 
 .avatar {
-  width: 110px;
-  height: 110px;
+
+  width: 115px;
+  height: 115px;
 
   margin: 0 auto 18px;
 
@@ -112,14 +141,19 @@ body::after {
 
   animation:
     borderAnimation 4s ease infinite,
-    pulse 2s ease-in-out infinite;
+    pulse 2.5s ease-in-out infinite;
 
   box-shadow:
-    0 0 20px rgba(139, 92, 246, 0.45),
-    0 0 45px rgba(99, 72, 220, 0.25);
+
+    0 0 20px rgba(139, 92, 246, 0.55),
+
+    0 0 50px rgba(99, 72, 220, 0.30);
+
 }
 
+
 .avatar video {
+
   width: 100%;
   height: 100%;
 
@@ -130,9 +164,13 @@ body::after {
   border-radius: 50%;
 
   border: 3px solid #08080c;
+
 }
 
-/* ANIMAÇÃO DA BORDA */
+
+/* =========================
+   ANIMAÇÃO DA BORDA
+========================= */
 
 @keyframes borderAnimation {
 
@@ -150,7 +188,10 @@ body::after {
 
 }
 
-/* PULSAÇÃO */
+
+/* =========================
+   PULSAÇÃO
+========================= */
 
 @keyframes pulse {
 
@@ -168,58 +209,84 @@ body::after {
 
 }
 
-/* NOME */
+
+/* =========================
+   NOME
+========================= */
 
 h1 {
+
   font-family: 'Metal Mania', cursive;
 
-  font-size: 42px;
+  font-size: 48px;
 
   font-weight: 400;
 
-  letter-spacing: 2px;
+  letter-spacing: 4px;
 
-  color: #e6e6e6;
+  color: #f2f2f2;
 
   text-transform: uppercase;
 
   text-shadow:
-    0 0 5px #ffffff,
-    0 0 12px rgba(255, 255, 255, 0.35);
+
+    0 0 5px #fff,
+
+    0 0 12px rgba(255,255,255,0.4),
+
+    0 0 25px rgba(139,92,246,0.35);
+
 }
 
-/* USUÁRIO */
+
+/* =========================
+   USERNAME
+========================= */
 
 .username {
+
   margin-top: 5px;
 
-  color: #b0b0bb;
+  color: #b5b5c0;
 
   font-size: 14px;
+
 }
 
-/* BIO */
+
+/* =========================
+   BIO
+========================= */
 
 .bio {
-  margin: 18px auto 26px;
 
-  color: #e0e0e6;
+  margin: 18px auto 28px;
+
+  color: #dedee5;
 
   line-height: 1.6;
 
   font-size: 14px;
+
 }
 
-/* BOTÕES */
+
+/* =========================
+   BOTÕES
+========================= */
 
 .links {
+
   display: grid;
 
-  gap: 12px;
+  gap: 13px;
+
 }
 
+
 .link {
-  min-height: 62px;
+
+  min-height: 64px;
 
   padding: 0 18px;
 
@@ -239,82 +306,128 @@ h1 {
   color: #fff;
 
   background:
-    rgba(10, 10, 15, 0.65);
+
+    rgba(8, 8, 12, 0.68);
 
   border:
-    1px solid rgba(255, 255, 255, 0.12);
+
+    1px solid rgba(255,255,255,0.13);
 
   border-radius: 17px;
 
-  backdrop-filter: blur(14px);
+  backdrop-filter: blur(15px);
 
-  -webkit-backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(15px);
 
   transition:
-    transform 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease,
-    box-shadow 0.2s ease;
+
+    transform 0.25s ease,
+
+    background 0.25s ease,
+
+    border-color 0.25s ease,
+
+    box-shadow 0.25s ease;
+
 }
+
 
 /* TEXTO DOS BOTÕES */
 
 .link span:nth-child(2) {
+
   font-family: 'Orbitron', sans-serif;
 
   font-weight: 600;
 
   font-size: 14px;
 
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
+
 }
 
-/* EFEITO AO PASSAR O MOUSE */
+
+/* HOVER */
 
 .link:hover {
-  transform: translateY(-3px);
+
+  transform: translateY(-4px) scale(1.01);
 
   background:
-    rgba(25, 20, 40, 0.80);
+
+    rgba(25,20,40,0.82);
 
   border-color:
-    rgba(139, 92, 246, 0.65);
+
+    rgba(139,92,246,0.75);
 
   box-shadow:
-    0 8px 30px rgba(99, 72, 220, 0.18);
+
+    0 10px 35px rgba(99,72,220,0.25),
+
+    0 0 20px rgba(139,92,246,0.08);
+
 }
 
-/* ÍCONE */
+
+/* =========================
+   ÍCONE
+========================= */
 
 .icon {
-  font-size: 19px;
+
+  font-size: 20px;
 
   color: #a78bfa;
+
 }
 
-/* SETA */
+
+/* =========================
+   SETA
+========================= */
 
 .arrow {
-  color: #a0a0aa;
+
+  color: #aaaab5;
 
   font-size: 18px;
+
+  transition: 0.2s;
+
 }
 
-/* REDES SOCIAIS */
+
+.link:hover .arrow {
+
+  color: #fff;
+
+  transform: translate(2px,-2px);
+
+}
+
+
+/* =========================
+   REDES SOCIAIS
+========================= */
 
 .socials {
-  margin: 25px 0 18px;
+
+  margin: 27px 0 18px;
 
   display: flex;
 
   justify-content: center;
 
-  gap: 10px;
+  gap: 11px;
+
 }
 
+
 .socials a {
-  width: 38px;
-  height: 38px;
+
+  width: 40px;
+  height: 40px;
 
   display: grid;
 
@@ -331,63 +444,106 @@ h1 {
   font-weight: 700;
 
   background:
-    rgba(10, 10, 15, 0.65);
+
+    rgba(8,8,12,0.68);
 
   border:
-    1px solid rgba(255, 255, 255, 0.10);
+
+    1px solid rgba(255,255,255,0.11);
 
   backdrop-filter: blur(10px);
 
   -webkit-backdrop-filter: blur(10px);
 
-  transition: 0.2s;
+  transition: 0.25s;
+
 }
+
 
 .socials a:hover {
-  transform: translateY(-2px);
+
+  transform: translateY(-3px);
 
   background:
-    rgba(139, 92, 246, 0.20);
+
+    rgba(139,92,246,0.22);
 
   border-color:
-    rgba(139, 92, 246, 0.50);
+
+    rgba(139,92,246,0.55);
+
+  box-shadow:
+
+    0 5px 20px rgba(139,92,246,0.20);
+
 }
 
-/* RODAPÉ */
+
+/* =========================
+   RODAPÉ
+========================= */
 
 footer {
+
   color: #777782;
 
   font-size: 11px;
 
   padding-top: 8px;
+
 }
 
-/* CELULAR */
+
+/* =========================
+   CELULAR
+========================= */
 
 @media (max-width: 480px) {
 
   .page {
+
     padding-top: 30px;
+
   }
+
 
   .avatar {
-    width: 88px;
-    height: 88px;
+
+    width: 92px;
+    height: 92px;
+
   }
+
 
   h1 {
-    font-size: 32px;
+
+    font-size: 36px;
+
+    letter-spacing: 3px;
+
   }
+
+
+  .bio {
+
+    font-size: 13px;
+
+  }
+
 
   .link {
-    min-height: 58px;
+
+    min-height: 59px;
 
     border-radius: 15px;
+
   }
 
+
   .link span:nth-child(2) {
+
     font-size: 12px;
+
   }
 
 }
