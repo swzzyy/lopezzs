@@ -121,10 +121,43 @@ body {
 /* NOME */
 
 h1 {
-  font-size: 30px;
+  font-size: 36px;
   font-weight: 800;
+  letter-spacing: 2px;
 
-  letter-spacing: -0.8px;
+  background: linear-gradient(
+    90deg,
+    #8b5cf6,
+    #c084fc,
+    #6366f1,
+    #8b5cf6
+  );
+
+  background-size: 300% auto;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation: nomeAnimado 4s linear infinite;
+
+  text-shadow: 0 0 25px rgba(139, 92, 246, 0.25);
+}
+
+@keyframes nomeAnimado {
+  0% {
+    background-position: 0% center;
+  }
+
+  50% {
+    background-position: 100% center;
+  }
+
+  100% {
+    background-position: 0% center;
+  }
+};
 }
 
 .username {
