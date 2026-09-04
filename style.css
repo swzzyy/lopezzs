@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Metal+Mania&display=swap');
 
 * {
   box-sizing: border-box;
@@ -27,16 +27,13 @@ body {
 
 .page {
   min-height: 100vh;
-
   display: flex;
   justify-content: center;
-
   padding: 42px 16px 28px;
 }
 
 .card {
   width: min(100%, 560px);
-
   text-align: center;
 }
 
@@ -73,13 +70,9 @@ body {
 .avatar video {
   width: 100%;
   height: 100%;
-
   display: block;
-
   object-fit: cover;
-
   border-radius: 50%;
-
   border: 3px solid #08080c;
 }
 
@@ -110,24 +103,14 @@ body {
     transform: scale(1);
   }
 }
-  );
-
-  box-shadow:
-    0 12px 40px rgba(99, 72, 220, 0.35);
-
-  border: 3px solid rgba(255, 255, 255, 0.12);
-}
 
 /* NOME */
 
 h1 {
   font-family: 'Metal Mania', cursive;
-
   font-size: 42px;
   font-weight: 400;
-
   letter-spacing: 2px;
-
   color: #e6e6e6;
 
   text-shadow:
@@ -136,13 +119,12 @@ h1 {
 
   text-transform: uppercase;
 }
-}
+
+/* USUÁRIO */
 
 .username {
   margin-top: 5px;
-
   color: #9b9ba7;
-
   font-size: 14px;
 }
 
@@ -150,11 +132,8 @@ h1 {
 
 .bio {
   margin: 18px auto 26px;
-
   color: #d4d4dc;
-
   line-height: 1.6;
-
   font-size: 14px;
 }
 
@@ -167,30 +146,18 @@ h1 {
 
 .link {
   min-height: 62px;
-
   padding: 0 18px;
 
   display: grid;
-
-  grid-template-columns:
-    34px
-    1fr
-    24px;
-
+  grid-template-columns: 34px 1fr 24px;
   align-items: center;
-
   gap: 8px;
 
   text-decoration: none;
-
   color: #fff;
 
-  background:
-    rgba(255, 255, 255, 0.055);
-
-  border:
-    1px solid rgba(255, 255, 255, 0.09);
-
+  background: rgba(255, 255, 255, 0.055);
+  border: 1px solid rgba(255, 255, 255, 0.09);
   border-radius: 17px;
 
   backdrop-filter: blur(14px);
@@ -204,11 +171,9 @@ h1 {
 .link:hover {
   transform: translateY(-3px);
 
-  background:
-    rgba(255, 255, 255, 0.10);
+  background: rgba(255, 255, 255, 0.10);
 
-  border-color:
-    rgba(139, 92, 246, 0.55);
+  border-color: rgba(139, 92, 246, 0.55);
 }
 
 .link span:nth-child(2) {
@@ -218,13 +183,11 @@ h1 {
 
 .icon {
   font-size: 19px;
-
   color: #a78bfa;
 }
 
 .arrow {
   color: #8f8f9b;
-
   font-size: 18px;
 }
 
@@ -234,9 +197,7 @@ h1 {
   margin: 25px 0 18px;
 
   display: flex;
-
   justify-content: center;
-
   gap: 10px;
 }
 
@@ -250,36 +211,27 @@ h1 {
   border-radius: 50%;
 
   color: #ddd;
-
   text-decoration: none;
 
   font-size: 11px;
-
   font-weight: 700;
 
-  background:
-    rgba(255, 255, 255, 0.06);
-
-  border:
-    1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 
   transition: 0.2s;
 }
 
 .socials a:hover {
   transform: translateY(-2px);
-
-  background:
-    rgba(139, 92, 246, 0.2);
+  background: rgba(139, 92, 246, 0.2);
 }
 
 /* RODAPÉ */
 
 footer {
   color: #686875;
-
   font-size: 11px;
-
   padding-top: 8px;
 }
 
@@ -297,12 +249,11 @@ footer {
   }
 
   h1 {
-    font-size: 27px;
+    font-size: 32px;
   }
 
   .link {
     min-height: 58px;
-
     border-radius: 15px;
   }
 }
