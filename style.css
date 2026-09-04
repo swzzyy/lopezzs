@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  font-family: Inter, Arial, sans-serif;
+  color: #fff;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(125, 70, 255, .20), transparent 35%),
+    linear-gradient(145deg, #07070a, #101016 55%, #07070a);
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 42px 16px 28px;
+}
+
+.card {
+  width: min(100%, 560px);
+  text-align: center;
+}
+
+.avatar {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 16px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: 38px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #8b5cf6, #4f46e5);
+  box-shadow: 0 12px 40px rgba(99, 72, 220, .35);
+  border: 3px solid rgba(255,255,255,.12);
+}
+
+h1 { font-size: 30px; font-weight: 800; letter-spacing: -.8px; }
+.username { margin-top: 5px; color: #9b9ba7; font-size: 14px; }
+.bio { margin: 18px auto 26px; color: #d4d4dc; line-height: 1.6; font-size: 14px; }
+
+.links { display: grid; gap: 12px; }
+
+.link {
+  min-height: 62px;
+  padding: 0 18px;
+  display: grid;
+  grid-template-columns: 34px 1fr 24px;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #fff;
+  background: rgba(255,255,255,.055);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 17px;
+  backdrop-filter: blur(14px);
+  transition: transform .2s ease, background .2s ease, border-color .2s ease;
+}
+
+.link:hover {
+  transform: translateY(-3px);
+  background: rgba(255,255,255,.10);
+  border-color: rgba(139,92,246,.55);
+}
+
+.link span:nth-child(2) { font-weight: 600; font-size: 15px; }
+.icon { font-size: 19px; color: #a78bfa; }
+.arrow { color: #8f8f9b; font-size: 18px; }
+
+.socials {
+  margin: 25px 0 18px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.socials a {
+  width: 38px; height: 38px;
+  display: grid; place-items: center;
+  border-radius: 50%;
+  color: #ddd;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 700;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.08);
+  transition: .2s;
+}
+
+.socials a:hover { transform: translateY(-2px); background: rgba(139,92,246,.2); }
+
+footer { color: #686875; font-size: 11px; padding-top: 8px; }
+
+@media (max-width: 480px) {
+  .page { padding-top: 30px; }
+  .avatar { width: 88px; height: 88px; }
+  h1 { font-size: 27px; }
+  .link { min-height: 58px; border-radius: 15px; }
+}
