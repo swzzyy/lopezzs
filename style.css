@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Metal+Mania&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Metal+Mania&family=Orbitron:wght@500;600;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -6,9 +6,14 @@
   padding: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
-  font-family: Inter, Arial, sans-serif;
+
+  font-family: 'Inter', Arial, sans-serif;
   color: #fff;
 
   background:
@@ -19,42 +24,89 @@ body {
     ),
     linear-gradient(
       145deg,
-      #07070a,
+      #050507,
       #101016 55%,
-      #07070a
+      #050507
     );
+
+  overflow-x: hidden;
 }
+
+/* CAMADA PARA O FUTURO GIF */
+
+body::before {
+  content: "";
+  position: fixed;
+
+  inset: 0;
+
+  z-index: -2;
+
+  background: #050507;
+}
+
+/* ESCURECE O FUNDO PARA DEIXAR O SITE LEGÍVEL */
+
+body::after {
+  content: "";
+  position: fixed;
+
+  inset: 0;
+
+  z-index: -1;
+
+  background:
+    linear-gradient(
+      rgba(0, 0, 0, 0.45),
+      rgba(0, 0, 0, 0.65)
+    );
+
+  pointer-events: none;
+}
+
+/* PÁGINA */
 
 .page {
   min-height: 100vh;
+
   display: flex;
   justify-content: center;
+
   padding: 42px 16px 28px;
 }
 
+/* CARTÃO */
+
 .card {
   width: min(100%, 560px);
+
   text-align: center;
+
+  position: relative;
 }
 
-/* FOTO / LOGO */
+/* FOTO / VÍDEO */
 
 .avatar {
   width: 110px;
   height: 110px;
+
   margin: 0 auto 18px;
+
   padding: 4px;
 
   border-radius: 50%;
+
   overflow: hidden;
 
-  background: linear-gradient(
-    45deg,
-    #8b5cf6,
-    #4f46e5,
-    #c084fc,
-    #8b5cf6
-  );
+  background:
+    linear-gradient(
+      45deg,
+      #8b5cf6,
+      #4f46e5,
+      #c084fc,
+      #8b5cf6
+    );
 
   background-size: 300% 300%;
 
@@ -70,13 +122,20 @@ body {
 .avatar video {
   width: 100%;
   height: 100%;
+
   display: block;
+
   object-fit: cover;
+
   border-radius: 50%;
+
   border: 3px solid #08080c;
 }
 
+/* ANIMAÇÃO DA BORDA */
+
 @keyframes borderAnimation {
+
   0% {
     background-position: 0% 50%;
   }
@@ -88,9 +147,13 @@ body {
   100% {
     background-position: 0% 50%;
   }
+
 }
 
+/* PULSAÇÃO */
+
 @keyframes pulse {
+
   0% {
     transform: scale(1);
   }
@@ -102,38 +165,48 @@ body {
   100% {
     transform: scale(1);
   }
+
 }
 
 /* NOME */
 
 h1 {
   font-family: 'Metal Mania', cursive;
+
   font-size: 42px;
+
   font-weight: 400;
+
   letter-spacing: 2px;
+
   color: #e6e6e6;
+
+  text-transform: uppercase;
 
   text-shadow:
     0 0 5px #ffffff,
     0 0 12px rgba(255, 255, 255, 0.35);
-
-  text-transform: uppercase;
 }
 
 /* USUÁRIO */
 
 .username {
   margin-top: 5px;
-  color: #9b9ba7;
+
+  color: #b0b0bb;
+
   font-size: 14px;
 }
 
-/* DESCRIÇÃO */
+/* BIO */
 
 .bio {
   margin: 18px auto 26px;
-  color: #d4d4dc;
+
+  color: #e0e0e6;
+
   line-height: 1.6;
+
   font-size: 14px;
 }
 
@@ -141,53 +214,89 @@ h1 {
 
 .links {
   display: grid;
+
   gap: 12px;
 }
 
 .link {
   min-height: 62px;
+
   padding: 0 18px;
 
   display: grid;
-  grid-template-columns: 34px 1fr 24px;
+
+  grid-template-columns:
+    34px
+    1fr
+    24px;
+
   align-items: center;
+
   gap: 8px;
 
   text-decoration: none;
+
   color: #fff;
 
-  background: rgba(255, 255, 255, 0.055);
-  border: 1px solid rgba(255, 255, 255, 0.09);
+  background:
+    rgba(10, 10, 15, 0.65);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.12);
+
   border-radius: 17px;
 
   backdrop-filter: blur(14px);
 
+  -webkit-backdrop-filter: blur(14px);
+
   transition:
     transform 0.2s ease,
     background 0.2s ease,
-    border-color 0.2s ease;
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
+
+/* TEXTO DOS BOTÕES */
+
+.link span:nth-child(2) {
+  font-family: 'Orbitron', sans-serif;
+
+  font-weight: 600;
+
+  font-size: 14px;
+
+  letter-spacing: 0.5px;
+}
+
+/* EFEITO AO PASSAR O MOUSE */
 
 .link:hover {
   transform: translateY(-3px);
 
-  background: rgba(255, 255, 255, 0.10);
+  background:
+    rgba(25, 20, 40, 0.80);
 
-  border-color: rgba(139, 92, 246, 0.55);
+  border-color:
+    rgba(139, 92, 246, 0.65);
+
+  box-shadow:
+    0 8px 30px rgba(99, 72, 220, 0.18);
 }
 
-.link span:nth-child(2) {
-  font-weight: 600;
-  font-size: 15px;
-}
+/* ÍCONE */
 
 .icon {
   font-size: 19px;
+
   color: #a78bfa;
 }
 
+/* SETA */
+
 .arrow {
-  color: #8f8f9b;
+  color: #a0a0aa;
+
   font-size: 18px;
 }
 
@@ -197,7 +306,9 @@ h1 {
   margin: 25px 0 18px;
 
   display: flex;
+
   justify-content: center;
+
   gap: 10px;
 }
 
@@ -206,32 +317,49 @@ h1 {
   height: 38px;
 
   display: grid;
+
   place-items: center;
 
   border-radius: 50%;
 
   color: #ddd;
+
   text-decoration: none;
 
   font-size: 11px;
+
   font-weight: 700;
 
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background:
+    rgba(10, 10, 15, 0.65);
+
+  border:
+    1px solid rgba(255, 255, 255, 0.10);
+
+  backdrop-filter: blur(10px);
+
+  -webkit-backdrop-filter: blur(10px);
 
   transition: 0.2s;
 }
 
 .socials a:hover {
   transform: translateY(-2px);
-  background: rgba(139, 92, 246, 0.2);
+
+  background:
+    rgba(139, 92, 246, 0.20);
+
+  border-color:
+    rgba(139, 92, 246, 0.50);
 }
 
 /* RODAPÉ */
 
 footer {
-  color: #686875;
+  color: #777782;
+
   font-size: 11px;
+
   padding-top: 8px;
 }
 
@@ -254,6 +382,12 @@ footer {
 
   .link {
     min-height: 58px;
+
     border-radius: 15px;
   }
+
+  .link span:nth-child(2) {
+    font-size: 12px;
+  }
+
 }
